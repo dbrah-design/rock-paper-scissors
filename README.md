@@ -1,1 +1,1 @@
-# rock-paper-scissors
+The goal of this project is to make a rock paper scissors game using javascript
