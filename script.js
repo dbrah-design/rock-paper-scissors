@@ -17,11 +17,19 @@ function playRound(playerSelection, computerSelection) {
    }
 }
 
+function game () {
+   console.log(playRound(playerSelection, computerSelection)); // Need to figure out how to loop this later
+   console.log(playRound(playerSelection, computerSelection));
+   console.log(playRound(playerSelection, computerSelection));
+   console.log(playRound(playerSelection, computerSelection));
+   console.log(playRound(playerSelection, computerSelection));
+}
 
-
-const playerSelection = "rock";
+const playerSelection = prompt('What is your selection?')
+// const playerSelection = "rock"; 
 const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+game()
+// console.log(playRound(playerSelection, computerSelection)); Going to keep this here just in case
  // This is so I want to reference a specific string in the array. This will be rock alert(computerChoice[1])
 
  // Got the code to work for the playRound section. I had to use a stack overflow article though and copy the code from there to get it to work though
