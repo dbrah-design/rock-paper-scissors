@@ -10,9 +10,15 @@ function getComputerChoice() {
  const rockBtn = document.querySelector(".rock-js");
  const paperBtn = document.querySelector(".paper-js");
  const scissorsBtn = document.querySelector(".scissors-js");
- console.log(rockBtn);
- console.log(paperBtn);
- console.log(scissorsBtn);
+ rockBtn.addEventListener('click', () => {
+   console.log(playRound("rock",getComputerChoice()))
+ })
+ paperBtn.addEventListener('click', () => {
+   console.log(playRound("paper",getComputerChoice()))
+ })
+ scissorsBtn.addEventListener('click', () => {
+   console.log(playRound("scissors",getComputerChoice()))
+ })
  
  function playRound(playerSelection, computerSelection) {
    if (playerSelection === computerSelection) {
