@@ -1,7 +1,3 @@
-function getComputerChoice() {
-    const computerChoice = ['rock','paper','scissors'];
-    return computerChoice[(Math.floor(Math.random() * computerChoice.length))];
-} 
 
 function getComputerChoice() {
    const computerChoice = ['rock','paper','scissors'];
@@ -10,6 +6,13 @@ function getComputerChoice() {
  
  let playerScore = 0;
  let computerScore = 0;
+
+ const rockBtn = document.querySelector(".rock-js");
+ const paperBtn = document.querySelector(".paper-js");
+ const scissorsBtn = document.querySelector(".scissors-js");
+ console.log(rockBtn);
+ console.log(paperBtn);
+ console.log(scissorsBtn);
  
  function playRound(playerSelection, computerSelection) {
    if (playerSelection === computerSelection) {
@@ -37,7 +40,7 @@ function getComputerChoice() {
  console.log(playRound(playerSelection, computerSelection));
  console.log(`player score: ${playerScore} computer score: ${computerScore}`)
  */
- 
+ /* Logic for playing five rounds
  function playGame() {
     for (let i=0;i<5;i++) {
        const playerSelection = prompt("What is your selection?").toLowerCase(); 
@@ -46,7 +49,7 @@ function getComputerChoice() {
        console.log(`player score: ${playerScore} computer score: ${computerScore}`);
     }
  }
+ */
  
  
- 
-  playGame()
+  // playGame()
