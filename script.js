@@ -10,21 +10,23 @@ function getComputerChoice() {
  const rockBtn = document.querySelector(".rock-js");
  const paperBtn = document.querySelector(".paper-js");
  const scissorsBtn = document.querySelector(".scissors-js");
- const computerSelection = getComputerChoice();
+ 
 
  rockBtn.addEventListener('click', () => {
-   (playRound("rock",computerSelection))
+   (playRound("rock",getComputerChoice()))
+   console.log(getComputerChoice())
  })
  paperBtn.addEventListener('click', () => {
-   (playRound("paper",computerSelection))
+   (playRound("paper",getComputerChoice()))
  })
  scissorsBtn.addEventListener('click', () => {
-   (playRound("scissors",computerSelection))
+   (playRound("scissors",getComputerChoice()))
  })
  
  function playRound(playerSelection, computerSelection) {
   let result = '';
-  const displayResult = document.querySelector(".js-result")
+  const displayResult = document.querySelector(".js-result");
+  const displayScore = document.querySelector(".js-score");
    if (playerSelection === computerSelection) {
     result = `It's a tie! you both picked ${playerSelection}`;
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
@@ -40,10 +42,13 @@ function getComputerChoice() {
      computerScore++;
      result = `You lose! ${computerSelection} beats ${playerSelection}`;
   }
-
+  
   displayResult.textContent = result
+  displayScore.textContent = `Player Score: ${playerScore} | Computer Score:${computerScore}`;
     
  }
+
+ // Something is off with the logic for the play round function. When I click one of the buttons multiple times, it repeats the same message. Need to figure out why it's doing that. Figured it out. It had to do  with the computer selection. For some reason it kept repeating the computer selection when I had the code written like const computerSelection = getComputerChoice() outside the scope of the event listener. Once I removed it and added getComputerChoice() to playRound function inside event listener it seemed to work
  
  /* Code to run one round of the game
  
