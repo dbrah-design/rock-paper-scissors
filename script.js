@@ -28,6 +28,8 @@ function playRound(playerSelection) {
  const computerSelection = getComputerChoice();
  const displayResult = document.querySelector(".js-result");
  const displayScore = document.querySelector(".js-score");
+ const displayWinner = document.querySelector(".js-winner");
+ 
  
   if (playerSelection === computerSelection) {
    result = `It's a tie! you both picked ${playerSelection}`;
@@ -44,11 +46,18 @@ function playRound(playerSelection) {
     computerScore++;
     result = `You lose! ${computerSelection} beats ${playerSelection}`;
  }
+
+ if (playerScore === 5) {
+  displayWinner.textContent = "You reached 5 points. You win!!!!";
+ } else if(computerScore === 5) {
+  displayWinner.textContent = "Computer reached 5 points. You lose!!!";
+ }
  
  displayResult.textContent = result
  displayScore.textContent = `Player Score: ${playerScore} | Computer Score:${computerScore}`;
    
 }
+
 
 // Something is off with the logic for the play round function. When I click one of the buttons multiple times, it repeats the same message. Need to figure out why it's doing that. Figured it out. It had to do  with the computer selection. For some reason it kept repeating the computer selection when I had the code written like const computerSelection = getComputerChoice() outside the scope of the event listener. Once I removed it and added getComputerChoice() to playRound function inside event listener it seemed to work.
 
